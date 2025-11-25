@@ -1,19 +1,21 @@
-import { tesloApi } from "@/api/tesloApi"
-import type { AuthResponse } from "../interfaces/auth.response";
+import { tesloApi } from '@/api/tesloApi';
+import type { AuthResponse } from '../interfaces/auth.response';
 
+export const loginAction = async (
+  email: string,
+  password: string
+): Promise<AuthResponse> => {
+  try {
+    const { data } = await tesloApi.post<AuthResponse>('/auth/login', {
+      email,
+      password,
+    });
 
-export const loginAction = async (email : string, password : string):Promise<AuthResponse> => {
-    try{
-        const {data} = await tesloApi.post<AuthResponse>('/auth/login', {
-            email: email,
-            password: password,
-        })
-        // console.log(data);
-        return data;
+    // console.log(data);
 
-
-    }catch(error){
-        console.log(error)
-        throw error;
-    }
-}
+    return data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};

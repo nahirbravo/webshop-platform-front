@@ -1,16 +1,16 @@
-import axios from 'axios'
+import axios from 'axios';
 
 const tesloApi = axios.create({
-    baseURL: import.meta.env.VITE_API_URL ,
-})
+  baseURL: import.meta.env.VITE_API_URL,
+});
 
 tesloApi.interceptors.request.use((config) => {
-    const token = localStorage.getItem('token');
-    if(token) {
-        config.headers.Authorization = `Bearer ${token}`
-    }
-    return config;
-})
+  const token = localStorage.getItem('token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
 
-//TODO: interceptores
-export {tesloApi}
+  return config;
+});
+
+export { tesloApi };

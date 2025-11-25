@@ -1,9 +1,7 @@
-import type { User } from "@/interfaces/user.interface";
+import type { User } from '@/interfaces/user.interface';
 
-
-//login , register, check status
+// Login, Register, CheckStatus
 export interface AuthResponse {
-    user:  User;
-    token: string;
+  user: User;
+  token: string;
 }
-

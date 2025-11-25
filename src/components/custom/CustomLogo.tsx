@@ -1,22 +1,18 @@
-import { Link } from "react-router"
+import { Link } from 'react-router';
 
-interface Props{
-    subtitle?: string
+interface Props {
+  subtitle?: string;
 }
 
-
-export const CustomLogo = ({subtitle = 'Shop'}: Props) => {
+export const CustomLogo = ({ subtitle = 'Shop' }: Props) => {
   return (
-    <Link to='/' className="flex items-center whitespace-nowrap">
-    
-     <span className="font-monserrat font-bold text-xl m-0 whitespace-nowrap">
-    TESLO | 
-    </span>
-    <p className="text-muted-foreground m-0 px-2 whitespace-nowrap">
+    <Link to="/" className="flex items-center whitespace-nowrap">
+      <span className="font-montserrat font-bold text-xl m-0 whitespace-nowrap">
+        Teslo |
+      </span>
+      <p className="text-muted-foreground m-0 px-2 whitespace-nowrap">
         {subtitle}
-    </p>
-    
+      </p>
     </Link>
-
-)
-}
+  );
+};

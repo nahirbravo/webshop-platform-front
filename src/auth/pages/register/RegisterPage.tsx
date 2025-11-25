@@ -1,50 +1,67 @@
-
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { CustomLogo } from "@/components/custom/CustomLogo"
-import { Link } from "react-router"
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { CustomLogo } from '@/components/custom/CustomLogo';
+import { Link } from 'react-router';
 
 export const RegisterPage = () => {
   return (
-    <div className={"flex flex-col gap-6"}>
-      <Card className="overflow-hidden p-0">
+    <div className={'flex flex-col gap-6'}>
+      <Card className="overflow-hidden p-0  ">
         <CardContent className="grid p-0 md:grid-cols-2">
           <form className="p-6 md:p-8">
             <div className="flex flex-col gap-6">
               <div className="flex flex-col items-center text-center">
                 <CustomLogo />
-                <p className="text-balance text-muted-foreground">Create a new account</p>
+
+                <p className="text-balance text-muted-foreground">
+                  Crea una nueva cuenta
+                </p>
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="fullName">Nombre completo</Label>
+                <Input
+                  id="fullName"
+                  type="text"
+                  placeholder="Nombre completo"
+                  required
+                />
               </div>
 
               <div className="grid gap-2">
-                <Label htmlFor="fullName">Full Name</Label>
+                <Label htmlFor="email">Correo</Label>
                 <Input
-                 id="fullName"
-                 type="text" 
-                 placeholder="Full Name" 
-                 required />
-              </div>
-              
-              <div className="grid gap-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="m@example.com" required />
+                  id="email"
+                  type="email"
+                  placeholder="mail@google.com"
+                  required
+                />
               </div>
               <div className="grid gap-2">
                 <div className="flex items-center">
-                  <Label htmlFor="password">Password</Label>
-                  <a href="#" className="ml-auto text-sm underline-offset-2 hover:underline" >
-                    Forgot your password?
+                  <Label htmlFor="password">Contraseña</Label>
+                  <a
+                    href="#"
+                    className="ml-auto text-sm underline-offset-2 hover:underline"
+                  >
+                    ¿Olvidaste tu contraseña?
                   </a>
                 </div>
-                <Input id="password" type="password" required placeholder="password" />
+                <Input
+                  id="password"
+                  type="password"
+                  required
+                  placeholder="Contraseña"
+                />
               </div>
               <Button type="submit" className="w-full">
-                Create account
+                Crear cuenta
               </Button>
               <div className="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-border">
-                <span className="relative z-10 bg-background px-2 text-muted-foreground">Or continue with</span>
+                <span className="relative z-10 bg-background px-2 text-muted-foreground">
+                  O ingresa con
+                </span>
               </div>
               <div className="grid grid-cols-3 gap-4">
                 <Button variant="outline" className="w-full">
@@ -76,10 +93,9 @@ export const RegisterPage = () => {
                 </Button>
               </div>
               <div className="text-center text-sm">
-                You already have an account? {' '}
-
+                ¿Ya tienes cuenta?{' '}
                 <Link to="/auth/login" className="underline underline-offset-4">
-                  Enter now
+                  Ingresa ahora
                 </Link>
               </div>
             </div>
@@ -94,10 +110,10 @@ export const RegisterPage = () => {
         </CardContent>
       </Card>
       <div className="text-balance text-center text-xs text-muted-foreground [&_a]:underline [&_a]:underline-offset-4 hover:[&_a]:text-primary">
-        By clicking continue, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+        Haciendo click, estás de acuerdo con{' '}
+        <a href="#">términos y condiciones</a> y{' '}
+        <a href="#">políticas de uso</a>.
       </div>
     </div>
-  )
-}
-
-
+  );
+};

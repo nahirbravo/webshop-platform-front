@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { useParams, useSearchParams } from 'react-router';
-import { getProductsActions } from '../actions/get-products.action';
 
+import { getProductsAction } from '../actions/get-products.action';
 
 export const useProducts = () => {
   const { gender } = useParams();
@@ -20,6 +20,7 @@ export const useProducts = () => {
 
   switch (price) {
     case 'any':
+      //
       break;
     case '0-50':
       minPrice = 0;
@@ -48,7 +49,7 @@ export const useProducts = () => {
       { offset, limit, gender, sizes, minPrice, maxPrice, query },
     ],
     queryFn: () =>
-      getProductsActions({
+      getProductsAction({
         limit: isNaN(+limit) ? 9 : limit,
         offset: isNaN(offset) ? 0 : offset,
         gender,
