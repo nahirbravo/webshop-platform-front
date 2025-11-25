@@ -1,4 +1,3 @@
-// https://github.com/Klerith/bolt-product-editor
 import { Navigate, useNavigate, useParams } from 'react-router';
 import { toast } from 'sonner';
 
